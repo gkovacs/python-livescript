@@ -7,7 +7,7 @@ Example
 ::
 
   >>> from livescript import lseval
-  >>> result = lseval('''
+  >>> print lseval('''
         require! 'fs'
         return fs.readdirSync('.')
       ''')

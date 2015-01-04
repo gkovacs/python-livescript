@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# md5: 7b91a1846eb215dba6f2ab0ce08f7a83
+# md5: 736465ea6fa3990f31943bf4b973ad30
 # coding: utf-8
 
 #!/usr/bin/env python3
@@ -9,9 +9,15 @@ from __future__ import division, unicode_literals, print_function
 # Copyright (c) 2015 Geza Kovacs https://github.com/gkovacs
 # Released under the MIT license.
 
-'''
+"""
 Python LiveScript lets you execute LiveScript code from Python
-'''
+
+  >>> from livescript import lseval
+  >>> print lseval('''
+        require! 'fs'
+        return fs.readdirSync('.')
+      ''')
+"""
 
 __license__ = str('MIT License')
 
@@ -93,5 +99,8 @@ def lseval(program):
   compiled = lscompile(program)
   return exec_context.eval(compiled)
 
+def eval(program):
+  compiled = lscompile(program)
+  return exec_context.eval(compiled)
 
 
